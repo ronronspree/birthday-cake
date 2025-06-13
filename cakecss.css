@@ -1,0 +1,527 @@
+body {
+    background-color: #082567;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main {
+    position: relative;
+    width: 15rem;
+    height: 30rem;
+    transform: scale(1);
+}
+
+.cake {
+    position: absolute;
+    bottom: 0;
+}
+
+.cake .lyr {
+    width: 15rem;
+    height: 6rem;
+    background-color: currentColor;
+    position: absolute;
+    border-radius: 7.5rem /1.5rem;
+}
+
+.cake .lyr-1 {
+    color: #2070ad ;
+    bottom: 0;
+}
+
+.cake .lyr-2 {
+    color: #6bb0db;
+    bottom: 3rem;
+}
+
+.cake .lyr-3 {
+    color:rgba(255, 255, 255, 0.577);
+    bottom: 6rem;
+    background-image: radial-gradient(ellipse 7.5rem 1.5rem at 7.5rem 1.5rem, black, rgb(255, 255, 255) 5%, rgba(255, 255, 255, 0.577) 100%, transparent);
+}
+
+.candle {
+    position: absolute;
+    bottom: 10rem;
+    left: 6.5rem;
+    width: 2rem;
+    height: 10rem;
+    background-color: #89CFF0;
+    border-radius: 1rem 0.5rem;
+    background-image: repeating-linear-gradient(45deg, white, white 10%, transparent 10%, transparent 20%);
+}
+
+.candle::before {
+    content: "";
+    position: absolute;
+    width: .5rem;
+    height: 2rem;
+    border-radius: .25rem /.15rem;
+    background-color: gray;
+    top: -1.5rem;
+    left: .75rem;
+}
+
+.candle::after {
+    content: "";
+    width: 2rem;
+    height: 1rem;
+    background-color: #89CFF0;
+    display: block;
+    border-radius: 50%;
+}
+
+.flame {
+    position: absolute;
+    left: 6.5rem;
+}
+
+.wht {
+    color: white;
+    animation: burn-wht 1.8s;
+    box-shadow: 0 0 1rem white;
+}
+
+.ylw {
+    color: gold;
+    top: 1.8rem;
+    animation: burn-ylw 1.6s;
+    box-shadow: 0 0 1rem gold;
+    opacity: .9;
+}
+
+.orng {
+    color: orange;
+    top: 3.6rem;
+    animation: burn-orng 0.4s;
+    box-shadow: 0 0 1rem orange;
+    opacity: .8;
+}
+
+.red {
+    color: gold;
+    top: 5.4rem;
+    animation: burn-red 1s;
+    opacity: .7;
+}
+
+.smoke {
+    color: black;
+    top: 8.8rem;
+    box-shadow: 0 0 2rem black;
+    background-color: currentColor;
+    position: relative;
+    border-color: currentColor;
+    width: .25rem;
+    height: .25rem;
+    top: 7rem;
+    animation-name: burn-smoke;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+.smk-1 {
+    animation-duration: .5s;
+    animation-name: burn-smoke-rev;
+    left: .5rem;
+}
+
+.smk-2 {
+    animation-duration: .6s;
+    left: -.5rem;
+}
+
+.smk-3 {
+    animation-duration: .7s;
+    animation-name: burn-smoke-rev;
+    left: 1rem;
+}
+
+.smk-4 {
+    animation-duration: .8s;
+    left: 1.5rem;
+}
+
+.smk-5 {
+    animation-duration: .9s;
+    left: 2rem;
+}
+
+.flm-part {
+    background-color: currentColor;
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(60deg) skewX(0deg) scale(1);
+    border-color: currentColor;
+    width: 2rem;
+    height: 2rem;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.flm-part.flipped {
+    transform: rotate(120deg) skewX(0deg) scale(1);
+}
+
+.flm-part::before {
+    content: "";
+    position: absolute;
+    border-radius: 0 0 0 100%;
+    border-bottom-style: solid;
+    border-bottom-color: inherit;
+    height: .5rem;
+    width: 2rem;
+    left: -1rem;
+    top: -.5rem;
+    border-bottom-width: 2rem;
+}
+
+.flm-part .flipped::before {
+    border-radius: 100% 0 0 0;
+    border-bottom: 0 solid transparent;
+    border-top-style: solid;
+    border-top-color: inherit;
+    border-top-width: 2rem;
+    height: .5rem;
+    width: 2rem;
+    left: -1rem;
+    top: 0;
+}
+
+@keyframes burn-wht {
+    0% {
+        transform: rotate(60deg) skewX(0deg) scale(1);
+    }
+
+    20% {
+        transform: rotate(50deg) skewX(-3deg) scale(1.1);
+    }
+
+    40% {
+        transform: rotate(60deg) skewX(0deg) scale(1);
+    }
+
+    60% {
+        transform: rotate(70deg) skewX(3deg) scale(1.1);
+    }
+
+    100% {
+        transform: rotate(60deg) skew(0deg) scale(1);
+    }
+}
+
+@keyframes burn-ylw {
+    0% {
+        transform: rotate(120deg) skewX(0deg) scale(1.4);
+    }
+
+    20% {
+        transform: rotate(110deg) skewX(10deg) scale(1.5);
+    }
+
+    40% {
+        transform: rotate(120deg) skewX(0deg) scale(1.4);
+    }
+
+    60% {
+        transform: rotate(130deg) skewX(-10deg) scale(1.5);
+    }
+
+    100% {
+        transform: rotate(120deg) skew(0deg) scale(1.4);
+    }
+}
+
+@keyframes burn-orng {
+    0% {
+        transform: rotate(65deg) skewX(0deg) scale(1.6);
+    }
+
+    20% {
+        transform: rotate(60deg) skewX(-15deg) scale(1.7);
+    }
+
+    40% {
+        transform: rotate(65deg) skewX(0deg) scale(1.6);
+    }
+
+    60% {
+        transform: rotate(70deg) skewX(2deg) scale(1.7);
+    }
+
+    100% {
+        transform: rotate(65deg) skew(0deg) scale(1.6);
+    }
+}
+
+@keyframes burn-red {
+    0% {
+        transform: rotate(120deg) skewX(0deg) scale(1.8);
+    }
+
+    20% {
+        transform: rotate(118deg) skewX(5deg) scale(2);
+    }
+
+    40% {
+        transform: rotate(120deg) skewX(0deg) scale(1.8);
+    }
+
+    60% {
+        transform: rotate(122deg) skewX(-5deg) scale(2);
+    }
+
+    100% {
+        transform: rotate(120deg) skewX(0deg) scale(1.8);
+    }
+}
+
+@keyframes burn-smoke {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(360deg) scale(4);
+        opacity: 0;
+        top: 0;
+    }
+}
+
+@keyframes burn-smoke-rev {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(-360deg) scale(5);
+        opacity: 0;
+        top: 0;
+    }
+}
+
+.bday-note {
+    position: absolute;
+    right: 10rem;
+    top: 13rem;
+    width: 400px;
+    height: auto;
+    background:rgb(255, 238, 139)
+;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+    line-height: 1.6;
+    border: 1px solid #99ccff;
+    z-index: 3;
+    background-image: repeating-linear-gradient(
+    to bottom,
+    rgb(255, 238, 139),
+    rgb(255, 238, 139) 20px,
+    #ffecb3 21px
+    );
+}
+
+.bday-note h2 {
+    margin-top: 0;
+    color: #004466;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.bday-note p {
+    margin: 0.5rem 0;
+    color: #003344;
+}
+
+
+/* 🎉 Birthday Message */
+.bday-message {
+  position: absolute;
+  top: 2rem;
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  color: rgb(248, 222, 76);
+  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+  text-shadow:
+    0 0 5px #d2c36e,
+    0 0 10px #d2c36e,
+    0 0 20px #d2c36e,
+    0 0 30px white;
+}
+
+
+
+/* 🎈 Balloons */
+.balloon {
+    width: 5rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    animation: floatBalloon 6s infinite ease-in-out;
+    z-index: 1;
+    opacity: 1;
+}
+
+.balloon1 {bottom: -100px; left: 10%; background-color: #fffba9e4; animation-delay: 0s; animation-duration: 8s; }
+.balloon2 {bottom: -100px; left: 30%; background-color: #fffba9e4; animation-delay: 1s; animation-duration: 7s; }
+.balloon3 {bottom: -100px; left: 50%; background-color: #fffba9e4; animation-delay: 3s; animation-duration: 9s; }
+.balloon4 {bottom: -100px; left: 70%; background-color: #fffba9e4; animation-delay: 5s; animation-duration: 6s; }
+.balloon5 {bottom: -100px; left: 90%; background-color: #fffba9e4; animation-delay: 4s; animation-duration: 10s;}
+
+
+@keyframes floatBalloon {
+    0% { transform: translateY(0); opacity: 0.9; }
+    50% { transform: translateY(-50vh) rotate(5deg); opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(-5deg); opacity: 0; }
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px white;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+/* Random placement */
+.star:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; transform: scale(0.8); }
+.star:nth-child(2) { top: 20%; left: 25%; animation-delay: 0.5s; transform: scale(0.5); }
+.star:nth-child(3) { top: 30%; left: 50%; animation-delay: 1s; }
+.star:nth-child(4) { top: 15%; left: 75%; animation-delay: 1.5s; transform: scale(0.6); }
+.star:nth-child(5) { top: 5%; left: 90%; animation-delay: 2s; }
+
+.star:nth-child(6) { top: 40%; left: 10%; animation-delay: 0.3s; }
+.star:nth-child(7) { top: 50%; left: 30%; animation-delay: 1.2s; transform: scale(0.7); }
+.star:nth-child(8) { top: 45%; left: 60%; animation-delay: 0.8s; }
+.star:nth-child(9) { top: 38%; left: 85%; animation-delay: 1.7s; transform: scale(0.6); }
+.star:nth-child(10) { top: 55%; left: 95%; animation-delay: 2.2s; transform: scale(0.4); }
+
+.star:nth-child(11) { top: 60%; left: 15%; animation-delay: 0.6s; }
+.star:nth-child(12) { top: 70%; left: 35%; animation-delay: 1.4s; transform: scale(0.8); }
+.star:nth-child(13) { top: 65%; left: 50%; animation-delay: 0.9s; }
+.star:nth-child(14) { top: 72%; left: 75%; animation-delay: 2.5s; transform: scale(0.5); }
+.star:nth-child(15) { top: 68%; left: 90%; animation-delay: 0.1s; }
+
+.star:nth-child(16) { top: 80%; left: 20%; animation-delay: 1.8s; transform: scale(0.7); }
+.star:nth-child(17) { top: 85%; left: 45%; animation-delay: 0.4s; transform: scale(0.6); }
+.star:nth-child(18) { top: 90%; left: 70%; animation-delay: 1.6s; }
+.star:nth-child(19) { top: 88%; left: 10%; animation-delay: 2.3s; transform: scale(0.5); }
+.star:nth-child(20) { top: 95%; left: 55%; animation-delay: 0.2s; transform: scale(0.8); }
+
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+}
+
+/*polaroid*/
+.polaroid-gallery {
+    position: absolute;
+    top: 12rem;
+    right: 50rem;
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.polaroid {
+    background: white;
+    padding: 0.5rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive;
+    border: 1px solid #ddd;
+    width: auto;
+    max-width: 8rem;
+    transform-origin: center;
+}
+
+.polaroid img {
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+}
+
+/* Different tilts for that messy real-life vibe */
+.rotate-left {
+    transform: rotate(-8deg);
+}
+
+.rotate-right {
+    transform: rotate(6deg);
+}
+
+.rotate-more-left {
+    transform: rotate(-12deg);
+}
+
+.rotate-more-right {
+    transform: rotate(10deg);
+}
+
+.rotate-more-left {
+    transform: rotate(-9deg);
+}
+
+.rotate-more-right {
+    transform: rotate(12deg);
+}
+
+
+/* glowy stars */
+.glow-star {
+    position: absolute;
+    font-size: 2.5rem;
+    color: gold;
+    text-shadow: 0 0 5px gold, 0 0 15px gold, 0 0 30px gold;
+    animation: twinkle 3s infinite ease-in-out;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Slight size/position animations for sparkle effect */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.2);
+    }
+}
+
+/* Random star placements */
+.star1 { top: 10%; left: 15%; }
+.star2 { top: 20%; right: 10%; }
+.star3 { top: 50%; left: 5%; }
+.star4 { top: 70%; right: 15%; }
+.star5 { top: 80%; left: 40%; }
+.star6 { top: 30%; right: 35%; }
+.star7 { top: 60%; left: 60%; }
+.star8 { bottom: 1rem; right: 1rem; top: auto; }
+
