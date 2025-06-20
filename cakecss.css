@@ -4,6 +4,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 
@@ -316,7 +319,7 @@ body {
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
     line-height: 1.6;
     border: 1px solid #99ccff;
     z-index: 3;
@@ -547,5 +550,16 @@ body {
   .main {
     transform: scale(0.8);
   }
+
+ .polaroid {
+  max-width: 100%;
+  width: 90%;
+ }
+
+.img {
+  max-width: 100%;
+  height: auto;
+}
+
 }
 
