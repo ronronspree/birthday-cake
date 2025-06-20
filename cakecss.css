@@ -529,37 +529,58 @@ body {
 .star8 { bottom: 1rem; right: 1rem; top: auto; }
 
 @media (max-width: 768px) {
-  .bday-note {
-    right: 1rem;
-    width: 90%;
-    top: 3rem;
-    font-size: 1rem;
+  body {
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+    align-items: flex-start;
   }
 
-  .polaroid-gallery {
-    right: 1rem;
+  .bday-note {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
     width: 90%;
-    flex-direction: column;
-    align-items: center;
+    top: auto;
+    bottom: 1rem;
+    font-size: 1rem;
+    z-index: 5;
   }
 
   .bday-message {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+    z-index: 6;
+    position: relative;
   }
 
   .main {
-    transform: scale(0.8);
+    transform: scale(0.7);
+    position: relative;
+    z-index: 4;
   }
 
- .polaroid {
-  max-width: 100%;
-  width: 90%;
- }
+  .polaroid-gallery {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    z-index: 2;
+  }
 
-.img {
-  max-width: 100%;
-  height: auto;
+  .polaroid {
+    max-width: 80%;
+    width: 80%;
+    font-size: 0.9rem;
+    z-index: 2;
+  }
+
+  .polaroid img {
+    max-width: 100%;
+    height: auto;
+  }
 }
-
-}
-
